@@ -1,0 +1,89 @@
+
+
+### **Project Name:** OLED Menu Builder Web App
+
+### **Description:**
+
+A web app for designing OLED-style UI menus for microcontroller displays (like ESP32 + SSD1306). Built with HTML, CSS, and JavaScript. Features:
+
+---
+
+### ✅ **Main Features**
+1. **New Project → Select Template → Menu**
+2. **Set number of menu items**
+3. **Each item =**
+   - Optional icon image
+   - Text label
+   - Font (chosen from U8g2 font list)
+4. **Scrolling Behavior**  
+   - The center item is highlighted with a box  
+   - Other items scroll up/down  
+   - Index integers increase as you scroll
+5. **Screen Editor for each item**
+   - Add UI elements (text placeholders)
+   - Each text can have a **data type**:
+     - `int` (e.g., temperature)
+     - `float` (e.g., pH)
+     - `string` (e.g., name)
+6. **OLED Preview Canvas**
+   - OLED screen size is fixed (e.g., 128x64)
+   - Simulate look with image + text
+7. **Export**
+   - Save project to JSON
+   - (Future) Generate U8g2 Arduino code
+
+---
+
+### ⚙️ **Tech Stack**
+- HTML5 + CSS3 + Vanilla JS
+- `<canvas>` used for OLED preview
+- No external frameworks needed
+- Assets stored locally
+- GitHub-compatible (can deploy on GitHub Pages)
+
+---
+
+### 🧩 Folder Structure
+
+```
+/
+├── index.html         # Main UI
+├── style.css          # Custom styles
+├── script.js          # All logic (menu, screen editor, export)
+├── fonts/             # U8g2 font preview images (optional)
+├── assets/            # Uploaded icons
+├── templates/         # Default JSONs or exports
+```
+
+---
+
+### 📌 TODO:
+- [x] Menu layout logic with center highlight
+- [x] Scroll index tracking
+- [x] Font selector (dropdown)
+- [x] Icon optionality
+- [ ] Add element to screen editor
+- [ ] Assign `int`, `float`, or `string` to screen elements
+- [ ] Export JSON config
+- [ ] Generate U8g2 `.ino` file from config
+
+---
+
+### 🧠 Example Use Case
+Design an OLED menu like:
+
+```
+> Settings
+[ Wi-Fi ]    ← highlighted
+> System
+```
+
+And screen shows:
+```
+Wi-Fi
+Status: [Connected]
+IP: 192.168.0.105
+```
+Where `IP` is a `string` field, and `Status` could be a boolean icon/text.
+
+---
